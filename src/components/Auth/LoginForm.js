@@ -1,4 +1,4 @@
-import {StyleSheet, View} from "react-native";
+import {StyleSheet, View, Text} from "react-native";
 import {Button, Icon, Input} from "react-native-elements";
 import React, {useState} from "react";
 import {useFormik} from "formik";
@@ -59,7 +59,7 @@ export default function LoginForm() {
             <Button title={"iniciar Sesión"} containerStyle={styles.containerBtn} buttonStyle={styles.btn}
                     onPress={formik.handleSubmit} loading={formik.isSubmitting}
             />
-            <Text style={styles.login} onPress={irRegistro}>Ir a Registro</Text>
+            <Text style={styles.login} >Ir a Registro</Text>
         </View>
     )
 }
