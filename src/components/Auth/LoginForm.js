@@ -9,6 +9,9 @@ import {useNavigation} from "@react-navigation/native";
 
 
 export default function LoginForm() {
+    const irRegistro = () => {
+        navigation.navigate('RegisterS')
+    }
     const navigation = useNavigation()
     const [pass, setPass] = useState(false);
     const showPass = () => {
@@ -59,7 +62,7 @@ export default function LoginForm() {
             <Button title={"iniciar Sesión"} containerStyle={styles.containerBtn} buttonStyle={styles.btn}
                     onPress={formik.handleSubmit} loading={formik.isSubmitting}
             />
-            <Text style={styles.login} >Ir a Registro</Text>
+            <Text style={styles.login} onPress={irRegistro}>Ir a Registro</Text>
         </View>
     )
 }
