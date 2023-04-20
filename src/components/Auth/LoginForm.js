@@ -47,33 +47,50 @@ export default function LoginForm() {
     })
     return (
         <View style={styles.viewForm}>
-            <Input containerStyle={styles.input} placeholder='Email'
+            <Input containerStyle={styles.input} placeholder='Correo Electrónico'
                    rightIcon={<Icon type="material-community" name="at" iconStyle={styles.icon}/>}
                    onChangeText={text => formik.setFieldValue("email", text)} errorMessage={formik.errors.email}
             />
-            <Input containerStyle={styles.input} placeholder='Password' secureTextEntry={!pass}
+            <Input containerStyle={styles.input} placeholder='Contraseña' secureTextEntry={!pass}
                    rightIcon={<Icon type="material-community" name={pass ? "eye-off-outline" : "eye-outline"}
                                     iconStyle={styles.icon} onPress={showPass}/>}
                    onChangeText={text => formik.setFieldValue("pass", text)} errorMessage={formik.errors.pass}
             />
-            <Button title={"Login"} containerStyle={styles.containerBtn} buttonStyle={styles.btn}
+            <Button title={"iniciar Sesión"} containerStyle={styles.containerBtn} buttonStyle={styles.btn}
                     onPress={formik.handleSubmit} loading={formik.isSubmitting}
             />
+            <Text style={styles.login} onPress={irRegistro}>Ir a Registro</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    TextForm: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
     viewForm: {
-        marginTop: 30,
-
-    },
-    containerBtn: {
-        width: "95%",
         marginTop: 20,
-
+        marginBottom: 20,
+        fontSize: 20,
+        fontWeight: 'bold',
+        borderColor: '#000',
+        borderWidth: 1,
+        borderRadius: 10,
+        width: 300,
+        textAlign: 'center',
+        padding: 10,
+        paddingBottom: 20,
     },
-    btn: {
-        backgroundColor: "green"
+    login: {
+        marginTop: 20,
+        fontSize: 15,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    btn:{
+        borderRadius: 10,
+        backgroundColor: '#00a680',
     }
 })
