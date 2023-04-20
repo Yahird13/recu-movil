@@ -10,13 +10,22 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigation() {
     const [session, setSession] = useState(null);
     console.log(session)
-   /* useEffect(()=>{
+    useEffect(()=>{
         const auth = getAuth();
         onAuthStateChanged(auth, (user)=>{
             setSession(!!user)
         })
         setSession(true)
-    },[])*/
+    },[])
+
+    useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            setSession(user ? true : false);
+        });
+    }, []);
+
+
 
 
 
